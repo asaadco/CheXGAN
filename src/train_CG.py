@@ -23,18 +23,15 @@ import torchvision.utils as vutils
 from PIL import Image
 from tqdm import tqdm
 
-from cyclegan_pytorch import DecayLR
-from cyclegan_pytorch import Discriminator
-from cyclegan_pytorch import Generator
-from cyclegan_pytorch import ImageDataset
-from cyclegan_pytorch import ReplayBuffer
-from cyclegan_pytorch import weights_init
-
+from optim import DecayLR
+from dataset import ImageDataset
+from models import Generator, Discriminator
+from utils import weights_init, ReplayBuffer
 parser = argparse.ArgumentParser(
     description="PyTorch implements `Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks`")
 parser.add_argument("--dataroot", type=str, default="./data",
                     help="path to datasets. (default:./data)")
-parser.add_argument("--dataset", type=str, default="horse2zebra",
+parser.add_argument("--dataset", type=str, default="CXR",
                     help="dataset name. (default:`horse2zebra`)"
                          "Option: [apple2orange, summer2winter_yosemite, horse2zebra, monet2photo, "
                          "cezanne2photo, ukiyoe2photo, vangogh2photo, maps, facades, selfie2anime, "
@@ -91,12 +88,12 @@ if torch.cuda.is_available() and not args.cuda:
 # Dataset
 dataset = ImageDataset(root=os.path.join(args.dataroot, args.dataset),
                        transform=transforms.Compose([
-                           transforms.Resize(int(args.image_size * 1.12), Image.BICUBIC),
+                           transforms.Resize(int(args.image_size)),
                            transforms.RandomCrop(args.image_size),
                            transforms.RandomHorizontalFlip(),
                            transforms.ToTensor(),
-                           transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]),
-                       unaligned=True)
+                           transforms.Normalize((0.5), (0.5))]),
+                       unaligned=True, A="No Finding", B="Hernia")
 
 dataloader = torch.utils.data.DataLoader(dataset, batch_size=args.batch_size, shuffle=True, pin_memory=True)
 
