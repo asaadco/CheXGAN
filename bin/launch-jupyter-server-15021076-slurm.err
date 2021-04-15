@@ -1,0 +1,99 @@
+
+To connect to the compute node gpu510-32 on Ibex running your Jupyter server, 
+you need to create an ssh tunnel from your local machine to login node on Ibex 
+using the following command.
+
+ssh -L 12890:gpu510-32:12890 alghas0c@glogin.ibex.kaust.edu.sa 
+
+Next, you need to copy the second url provided below and paste it into the browser 
+on your local machine.
+
+/home/alghas0c/projects/GAN/env/lib/python3.7/site-packages/jupyter_server/transutils.py:13: FutureWarning: The alias `_()` will be deprecated. Use `_i18n()` instead.
+  warnings.warn(warn_msg, FutureWarning)
+[I 05:03:26.485 LabApp] JupyterLab extension loaded from /home/alghas0c/projects/GAN/env/lib/python3.7/site-packages/jupyterlab
+[I 05:03:26.485 LabApp] JupyterLab application directory is /home/alghas0c/projects/GAN/env/share/jupyter/lab
+[I 05:03:31.164 LabApp] Serving notebooks from local directory: /home/alghas0c/projects/GAN
+[I 05:03:31.165 LabApp] Jupyter Notebook 6.3.0 is running at:
+[I 05:03:31.165 LabApp] http://gpu510-32:12890/?token=8d83a200ffb968e90ab64e3f1e7a23317d0103077e2d30d0
+[I 05:03:31.165 LabApp]  or http://127.0.0.1:12890/?token=8d83a200ffb968e90ab64e3f1e7a23317d0103077e2d30d0
+[I 05:03:31.165 LabApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 05:03:31.174 LabApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///home/alghas0c/.local/share/jupyter/runtime/nbserver-139367-open.html
+    Or copy and paste one of these URLs:
+        http://gpu510-32:12890/?token=8d83a200ffb968e90ab64e3f1e7a23317d0103077e2d30d0
+     or http://127.0.0.1:12890/?token=8d83a200ffb968e90ab64e3f1e7a23317d0103077e2d30d0
+[I 05:03:52.204 LabApp] 302 GET /?token=8d83a200ffb968e90ab64e3f1e7a23317d0103077e2d30d0 (10.109.66.127) 1.460000ms
+[W 05:03:53.380 LabApp] 404 GET /nvdashboard/index.json?1617847433273 (10.109.66.127) 76.110000ms referer=http://127.0.0.1:12890/lab
+[I 05:03:56.400 LabApp] Build is up to date
+[W 05:03:57.104 LabApp] Notebook notebooks/train.ipynb is not trusted
+[I 05:03:57.563 LabApp] Kernel started: e5d42449-b370-41de-b94b-93b203e8909d, name: python3
+RuntimeError: module compiled against API version 0xe but this version of numpy is 0xd
+[I 05:05:19.063 LabApp] Kernel restarted: e5d42449-b370-41de-b94b-93b203e8909d
+[I 05:05:57.233 LabApp] Saving file at /notebooks/train.ipynb
+[I 05:07:57.326 LabApp] Saving file at /notebooks/train.ipynb
+[I 05:09:57.400 LabApp] Saving file at /notebooks/train.ipynb
+[I 05:11:57.475 LabApp] Saving file at /notebooks/train.ipynb
+[I 05:12:40.841 LabApp] Saving file at /notebooks/train.ipynb
+[I 05:14:41.082 LabApp] Saving file at /notebooks/train.ipynb
+[I 05:18:42.027 LabApp] Saving file at /notebooks/train.ipynb
+[I 05:19:32.782 LabApp] Saving file at /notebooks/train.ipynb
+[I 05:22:19.934 LabApp] Starting buffering for e5d42449-b370-41de-b94b-93b203e8909d:331c390b-66d7-48a0-b884-d28d64756860
+[W 05:22:19.948 LabApp] Got events for closed stream None
+[W 05:22:19.948 LabApp] Got events for closed stream None
+[E 05:22:19.952 LabApp] <LspStdIoWriter(parent=<LanguageServerSession(language_server=pyls, argv=['/home/alghas0c/projects/GAN/env/bin/python3.7', '-m', 'pyls'])>)> couldn't write message: Content-Length: 178
+    
+    {"jsonrpc":"2.0","id":455,"method":"textDocument/hover","params":{"textDocument":{"uri":"file:///home/alghas0c/projects/GAN/src/utils.py"},"position":{"line":10,"character":12}}}
+    Traceback (most recent call last):
+      File "/home/alghas0c/projects/GAN/env/lib/python3.7/site-packages/jupyter_lsp/stdio.py", line 193, in write
+        await convert_yielded(self._write_one(response.encode("utf-8")))
+    concurrent.futures._base.CancelledError
+[W 05:22:21.033 LabApp] 404 GET /nvdashboard/index.json?1617848541014 (10.109.66.127) 7.500000ms referer=http://127.0.0.1:12890/lab
+[I 05:22:23.677 LabApp] Build is up to date
+RuntimeError: module compiled against API version 0xe but this version of numpy is 0xd
+[I 05:35:26.766 LabApp] Starting buffering for e5d42449-b370-41de-b94b-93b203e8909d:5199e28d-4f7d-4a61-abda-69cd46cca369
+[W 05:35:26.817 LabApp] Notebook notebooks/train.ipynb is not trusted
+[I 05:37:27.697 LabApp] Saving file at /notebooks/train.ipynb
+[I 05:39:27.783 LabApp] Saving file at /notebooks/train.ipynb
+[I 05:41:27.866 LabApp] Saving file at /notebooks/train.ipynb
+[I 05:43:12.025 LabApp] Kernel restarted: e5d42449-b370-41de-b94b-93b203e8909d
+[I 05:43:27.967 LabApp] Saving file at /notebooks/train.ipynb
+[I 05:45:28.051 LabApp] Saving file at /notebooks/train.ipynb
+[I 05:46:34.843 LabApp] Kernel restarted: e5d42449-b370-41de-b94b-93b203e8909d
+[I 05:47:02.430 LabApp] Kernel interrupted: e5d42449-b370-41de-b94b-93b203e8909d
+[I 05:47:28.127 LabApp] Saving file at /notebooks/train.ipynb
+[I 05:49:28.231 LabApp] Saving file at /notebooks/train.ipynb
+[I 05:51:28.308 LabApp] Saving file at /notebooks/train.ipynb
+[I 05:53:28.373 LabApp] Saving file at /notebooks/train.ipynb
+[I 05:55:28.439 LabApp] Saving file at /notebooks/train.ipynb
+[I 05:57:28.532 LabApp] Saving file at /notebooks/train.ipynb
+[I 05:59:28.607 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:01:28.676 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:03:28.753 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:05:28.816 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:07:28.883 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:09:28.953 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:11:29.027 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:13:29.332 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:15:29.403 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:17:29.491 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:19:29.553 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:21:29.651 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:23:29.733 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:25:29.810 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:27:29.884 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:29:29.962 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:31:30.041 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:33:30.113 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:35:31.029 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:37:31.133 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:39:31.195 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:41:31.291 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:43:31.367 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:45:31.451 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:47:31.519 LabApp] Saving file at /notebooks/train.ipynb
+[I 06:49:31.621 LabApp] Saving file at /notebooks/train.ipynb
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 15021076 ON gpu510-32 CANCELLED AT 2021-04-08T08:03:31 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 15021076.0 ON gpu510-32 CANCELLED AT 2021-04-08T08:03:31 DUE TO TIME LIMIT ***
